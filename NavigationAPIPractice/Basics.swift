@@ -7,15 +7,32 @@
 
 import SwiftUI
 
+struct Fruit: Identifiable, Hashable {
+    var id = UUID()
+    var name: String
+    var no: Int
+}
+
+let fruits: [Fruit] = [
+    Fruit(name: "Apple", no: 10),
+    Fruit(name: "Banana", no: 3),
+    Fruit(name: "Grapes", no: 13),
+    Fruit(name: "Pineapple", no: 23),
+    Fruit(name: "Stawberry", no: 7)
+]
+
+
 struct Basics: View {
 //    @State var path: [Fruit] = [] // It has to be an array but this is restricted to one type
     @State var path = NavigationPath() // It takes all the type
+    
     var body: some View {
         NavigationStack(path: $path) {
             List {
                 Text("String")
                     .font(.title)
                     .bold()
+                    .foregroundStyle(.cyan)
                 ForEach(fruits) { fruit in
 //                    NavigationLink {
 //                        Text(fruit.name)
@@ -27,8 +44,9 @@ struct Basics: View {
                     }
                     
                 }
+                // Here we are manually adding content to path, but when we use NavigationLink it auto adds
                 Button {
-                    let randomFruit = fruits.randomElement()!.name
+                    let randomFruit = fruits.randomElement()!.name // this basically value if we see in NavigationLink perspective
                     path.append(randomFruit)
                 } label: {
                     Text("String Path Button")
@@ -37,6 +55,7 @@ struct Basics: View {
                 Text("Int")
                     .font(.title)
                     .bold()
+                    .foregroundStyle(.cyan)
                 ForEach(fruits) { fruit in
                     NavigationLink(value: fruit.no) {
                         Text(fruit.name)
@@ -53,6 +72,7 @@ struct Basics: View {
                 Text("Fruit itself")
                     .font(.title)
                     .bold()
+                    .foregroundStyle(.cyan)
                 ForEach(fruits) { fruit in
                     NavigationLink(value: fruit) {
                         Text(fruit.name)
@@ -69,6 +89,7 @@ struct Basics: View {
                 Text("Button")
                     .font(.title)
                     .bold()
+                    .foregroundStyle(.cyan)
                 NavigationLink(value: fruits.randomElement()) {
                     Text("Random Fruit")
                         .bold()
@@ -77,6 +98,7 @@ struct Basics: View {
                 Text("Path")
                     .font(.title)
                     .bold()
+                    .foregroundStyle(.cyan)
                 Button {
                     let randomFruit = fruits.randomElement()
                     path.append(randomFruit!)
@@ -112,17 +134,3 @@ struct Basics: View {
 #Preview {
     Basics()
 }
-
-struct Fruit: Identifiable, Hashable {
-    var id = UUID()
-    var name: String
-    var no: Int
-}
-
-let fruits: [Fruit] = [
-    Fruit(name: "Apple", no: 10),
-    Fruit(name: "Banana", no: 3),
-    Fruit(name: "Grapes", no: 13),
-    Fruit(name: "Pineapple", no: 23),
-    Fruit(name: "Stawberry", no: 7)
-]
