@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Basics: View {
 //    @State var path: [Fruit] = [] // It has to be an array but this is restricted to one type
     @State var path = NavigationPath() // It takes all the type
     var body: some View {
@@ -110,7 +110,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    Basics()
 }
 
 struct Fruit: Identifiable, Hashable {
