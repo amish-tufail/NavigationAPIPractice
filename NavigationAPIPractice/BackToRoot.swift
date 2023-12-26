@@ -48,6 +48,33 @@ struct FirstView: View {
             }
         }
         .environment(router)
+        // Code for deep linking
+        /*
+         1. For this first we go to Info -> URL Schemes, there we give unique Identifier and give a URL Scheme.
+         2. Then we write the below code based on our navigation
+         3. Test it while running simulator using terminal
+         4. xcrun simctl openurl booted navStack://Pakistan -> This is how we use deep linking using terminal, first part is our URL scheme, second part is our first navigated link and so on.
+         5. We create normal usesable link like: navStack://Pakistan/Islamabad -> this will route to last navigation
+         6. NOTE: if we have spaces in name like United States then -> navStack://United%20States -> %20 indicates spaces
+         
+         */
+        .onOpenURL(perform: { url in // This gives us the url
+            guard let scheme = url.scheme, scheme == "navStack" else { return } // First we match our url.scheme with the url scheme name we provided
+            print(scheme)
+            guard let host = url.host else { return } // Then we check host, which is basically the first navigated link ( First View from where Navigation linking starts)
+            if let foundCountry = countires.first(where: { $0.name == host }) { // Host in our case is Country
+                print(foundCountry) // Ensuring check
+                router.reset()
+                router.path.append(foundCountry) // reset and add into router
+                if url.pathComponents.count == 2 { // if more than one component then we do this
+                    let city = url.lastPathComponent // getting the last component similar to how we got host
+                    if let foundCity = foundCountry.cities.first(where: { $0 == city }) { // Again Check
+                        print(foundCity)
+                        router.path.append(foundCity) // Added to router
+                    }
+                }
+            }
+        })
     }
 }
 
