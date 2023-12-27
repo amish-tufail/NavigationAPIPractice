@@ -12,6 +12,7 @@
 		EEAABFA42B39AF6D00422ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAABFA32B39AF6D00422ED5 /* Assets.xcassets */; };
 		EEAABFA72B39AF6D00422ED5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAABFA62B39AF6D00422ED5 /* Preview Assets.xcassets */; };
 		EEAABFAE2B39D44B00422ED5 /* BackToRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAABFAD2B39D44B00422ED5 /* BackToRoot.swift */; };
+		EEAABFB12B3BF9CE00422ED5 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAABFB02B3BF9CE00422ED5 /* SplitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EEAABFA62B39AF6D00422ED5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEAABFAD2B39D44B00422ED5 /* BackToRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToRoot.swift; sourceTree = "<group>"; };
 		EEAABFAF2B3B1E9800422ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EEAABFB02B3BF9CE00422ED5 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				EEAABF9F2B39AF6C00422ED5 /* NavigationAPIPracticeApp.swift */,
 				EEAABFA12B39AF6C00422ED5 /* Basics.swift */,
 				EEAABFAD2B39D44B00422ED5 /* BackToRoot.swift */,
+				EEAABFB02B3BF9CE00422ED5 /* SplitView.swift */,
 				EEAABFA32B39AF6D00422ED5 /* Assets.xcassets */,
 				EEAABFA52B39AF6D00422ED5 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAABFAE2B39D44B00422ED5 /* BackToRoot.swift in Sources */,
+				EEAABFB12B3BF9CE00422ED5 /* SplitView.swift in Sources */,
 				EEAABFA22B39AF6C00422ED5 /* Basics.swift in Sources */,
 				EEAABFA02B39AF6C00422ED5 /* NavigationAPIPracticeApp.swift in Sources */,
 			);
